@@ -169,3 +169,27 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
+
+while true; do
+    read -p "Do you wish to Install Immuinfy?" yn
+    case $yn in
+        [Yy]* ) wget https://repo.imunify360.cloudlinux.com/defence360/imav-deploy.sh
+		bash imav-deploy.sh; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+    read -p "Do you wish to Enable Shell Fork Bomb Protection?" yn
+    case $yn in
+        [Yy]* ) /usr/local/cpanel/bin/install-login-profile --install limits;
+echo "Protection Enabled";
+ break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+
+
