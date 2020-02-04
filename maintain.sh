@@ -202,3 +202,20 @@ while true; do
     esac
 done
 
+ echo "=== TweaK Settings Custom ==="
+
+    if [ -f /usr/local/cpanel/bin/whmapi1 ]; then
+        /usr/local/cpanel/bin/whmapi1 set_tweaksetting key=referrerblanksafety value=1
+        /usr/local/cpanel/bin/whmapi1 set_tweaksetting key=referrersafety value=1
+    else
+        if grep -Fxq "^referrer" /var/cpanel/cpanel.config; then
+            sed -i 's/^referrerblanksafety=.*/referrerblanksafety=1/' /var/cpanel/cpanel.config
+            sed -i 's/^referrersafety=.*/referrersafety=1/' /var/cpanel/cpanel.config
+        else
+            echo "referrerblanksafety=1" >> /var/cpanel/cpanel.config
+            echo "referrersafety=1" >> /var/cpanel/cpanel.config
+        fi
+        /usr/local/cpanel/whostmgr/bin/whostmgr2 --updatetweaksettings
+    fi
+    
+
