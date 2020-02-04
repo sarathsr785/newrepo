@@ -191,5 +191,14 @@ echo "Protection Enabled";
     esac
 done
 
-
+while true; do
+    read -p "Do you wish to Disable WHM Terminal Feature?" yn
+    case $yn in
+        [Yy]* ) touch  /var/cpanel/disable_whm_terminal_ui;
+        echo "Terminal Disabled";
+                break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
