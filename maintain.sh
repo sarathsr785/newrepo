@@ -205,6 +205,7 @@ done
  echo "=== TweaK Settings Custom ==="
 
     if [ -f /usr/local/cpanel/bin/whmapi1 ]; then
+        cp -pr /var/cpanel/cpanel.config /usr/ 
         /usr/local/cpanel/bin/whmapi1 set_tweaksetting key=referrerblanksafety value=1
         /usr/local/cpanel/bin/whmapi1 set_tweaksetting key=referrersafety value=1
     else
