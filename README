@@ -1,0 +1,13 @@
+
+For Fresh cpanel specially on dedicated server (for vps we have cpanel images)
+You can use below script 
+
+1. SSH port changes 
+2. CSF Install
+3. Maldet Install
+4. Config Server Plugins
+5. Secure Tmp
+6. Shell Fork Bomb Protection
+7. Do you wish to Install Immuinfy
+8. Disable WHM Terminal Feature
+9. TweaK Settings 
