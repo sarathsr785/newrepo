@@ -218,5 +218,16 @@ done
         fi
         /usr/local/cpanel/whostmgr/bin/whostmgr2 --updatetweaksettings
     fi
-    
+  while true; do
+    read -p "Do you wish to Scan Whole Server with CSI cpanel script?" yn
+    case $yn in
+        [Yy]* ) wget https://github.com/CpanelInc/tech-CSI/raw/master/csi.pl;
+		/usr/local/cpanel/3rdparty/bin/perl csi.pl --full;
+        echo "Scan Completed";
+                break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+ 
 
