@@ -165,7 +165,7 @@ while true; do
     read -p "Do you wish to secure tmp partition?" yn
     case $yn in
         [Yy]* ) /scripts/securetmp; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -175,7 +175,7 @@ while true; do
     case $yn in
         [Yy]* ) wget https://repo.imunify360.cloudlinux.com/defence360/imav-deploy.sh
 		bash imav-deploy.sh; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -186,7 +186,7 @@ while true; do
         [Yy]* ) /usr/local/cpanel/bin/install-login-profile --install limits;
 echo "Protection Enabled";
  break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -197,7 +197,7 @@ while true; do
         [Yy]* ) touch  /var/cpanel/disable_whm_terminal_ui;
         echo "Terminal Disabled";
                 break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
@@ -225,7 +225,7 @@ done
 		/usr/local/cpanel/3rdparty/bin/perl csi.pl --full;
         echo "Scan Completed";
                 break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
